@@ -1,0 +1,10 @@
+{
+    "hooks": [
+
+    {
+        "name": "app.email",
+        "script": "./cartridge/scripts/hooks/email"
+    }
+]
+
+}
