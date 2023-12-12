@@ -7,7 +7,7 @@
 
     <!-- +1.888.555.0199 --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demandware customers can remove this.-->
     <div class="home-main homepage">
-    <h2>${pdict.detailText}</h2>
+    <iscomment> <h2>${pdict.detailText}</h2> </iscomment>
         <isslot id="home-main-m" description="Main home page slot." context="global" />
     </div>
 
