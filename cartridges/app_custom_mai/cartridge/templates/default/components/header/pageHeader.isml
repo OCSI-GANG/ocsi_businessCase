@@ -23,7 +23,7 @@
                             </div>
 
                             <div class="d-flex ">
-                                <div class="hidden-md-down">
+                                <div class="hidden-md-up">
                                     <isinclude url="${URLUtils.url('Account-Header')}" />
                                     <iscomment>Langue put in comment </iscomment>
                                     <iscomment> <isinclude url="${URLUtils.url('Page-Locale')}" /> </iscomment>

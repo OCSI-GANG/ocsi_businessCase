@@ -79,6 +79,7 @@ $menu-item-margin: 0.625em;
     }
 
     @include media-breakpoint-down(md) {
+        left: 50%;
         width: 4em; /* 64/16 */
         margin-left: -2em;
         padding-top: 0.8em;
