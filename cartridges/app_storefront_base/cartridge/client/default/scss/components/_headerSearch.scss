@@ -4,6 +4,7 @@
 .site-search {
     position: relative;
     height: 2.5em; /* 40/16 */
+    margin-left: 9.5rem;
 
     @include media-breakpoint-up(sm) {
         margin-right: 0.5em; /* 20/16 */
@@ -27,7 +28,7 @@
         position: absolute;
         border: none;
         top: 0.5rem;
-        right: -13.7rem;
+        right: -10.7rem;
         padding: 0;
         background-color: transparent;
         font-size: 25px;
@@ -43,14 +44,25 @@
     }
 
     input {
-        margin-left: 4rem;
-        padding-right: 20rem;
+        // margin-left: 4rem;
+        // padding-right: 20rem;
         height: 100%;
         width: 32rem;
         border: 1px solid var(--color-black);
         border-radius: 20px;
         background-color: #f1f3f5;
         height: 2.5rem;
+        letter-spacing: 1px;
+    }
+    @include media-breakpoint-down(sm) {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: inherit;
+        margin: auto;
+        input {
+            width: 90vw;
+        }
     }
 }
 
