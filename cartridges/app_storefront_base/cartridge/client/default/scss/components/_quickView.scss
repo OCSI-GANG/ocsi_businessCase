@@ -23,7 +23,7 @@
         border-top-right-radius: 0.1875rem;
 
         .full-pdp-link {
-            color: #{var(--skin-primary-color-1)};
+            color: #00A4E5;
         }
 
         .close {
@@ -120,5 +120,65 @@
     .non-input-label {
         display: block;
         margin-bottom: 0.5rem;
+    }
+}
+
+#quickViewModal {
+    .mai-bg-color-select-color
+    {
+        span {
+            background-image: none;
+            background-color: #FF6B79;
+        }
+    } 
+
+    .prices {
+        text-align: left;
+
+        .price {
+            .sales {
+                .value {
+                    color: #00A4E5;
+                    letter-spacing: 2px;
+                    font-weight: 600;
+                }
+            }
+        }
+    } 
+    .mai-quick-view-bg-promotions{
+        background-color: #F1F3F5;
+        padding: 10px 10px 10px 15px;
+        .bi-info-circle-fill{
+            color: #3067c5;
+            margin-bottom: 5px;
+        }
+    }
+    .quick-view-dialog .promotions, .choose-bonus-product-dialog .promotions{
+        color: var(--color-black);
+    }
+
+    .custom-select {
+        appearance: none;
+        background: none;
+        &::after{
+            // float: right;
+            // content: "\f078";
+            // font-family: "FontAwesome";
+            // display: inline-block;
+            // width: 0.8rem;  
+            // height: 0.5rem;  
+            // color:var(--color-black);
+            // font-weight: 600;
+            content: " <- EXCITING!";
+            color: green;
+        }
+        &::before{
+            float: right;
+            content: "\f078";
+            font-family: "FontAwesome";
+            // height: 0.5rem;  
+            // color:var(--color-black);
+            // font-weight: 600;
+        }
     }
 }

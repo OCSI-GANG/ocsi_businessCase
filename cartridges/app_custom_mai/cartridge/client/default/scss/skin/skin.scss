@@ -91,7 +91,7 @@ header ~ #maincontent .container a:not(.btn-primary, .btn-outline-primary) {
 .nav-item .nav-link:hover,
 .nav-item .nav-link:focus,
 .nav-item.show .nav-link {
-    // background-color: var(--skin-menu-color-1-invert);
+    background-color: var(--skin-menu-color-1-invert);
     color: var(--skin-menu-color-1) !important;
 }
 
@@ -137,11 +137,4 @@ h6 {
 
 a {
     color: var(--skin-link-color-1);
-}
-
-.navbar-nav {
-    justify-content: center;
-    a{
-        font-weight: 600;
-    }
 }
