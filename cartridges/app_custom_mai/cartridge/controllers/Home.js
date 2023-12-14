@@ -12,7 +12,7 @@ server.prepend('Show', function (req, res, next) {
 	res.getViewData();
     //TODO set a viewData variable 'detailText' with value 'General Company Details, no promo at this time' in the code below 
 	
-	res.setViewData({ detailText : 'General Company Details, no promo at this time' });
+	// res.setViewData({ detailText : 'General Company Details, no promo at this time' });
 	next();
 });
 
