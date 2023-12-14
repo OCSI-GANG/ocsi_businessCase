@@ -13,7 +13,7 @@ Template Notes:
     <isif condition="${attr.swatchable}">
 
         <!-- Select <Attribute> Label -->
-        <span class="${attr.id} non-input-label">
+        <span class="${attr.id} font-weight-bold non-input-label">
             ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
         </span>
 
@@ -27,6 +27,7 @@ Template Notes:
                 >
                     <span data-attr-value="${attrValue.value}"
                           class="
+                            border-dark
                               ${attr.id}-value
                               swatch-circle
                               swatch-value
@@ -45,12 +46,12 @@ Template Notes:
 
     <iselse>
         <!-- Select <Attribute> Label -->
-        <label class="${attr.id}" for="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }">
+        <label class="${attr.id} font-weight-bold" for="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }">
             ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
         </label>
 
         <!-- Attribute Values Drop Down Menu -->
-        <select class="custom-select form-control select-${attr.id}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
+        <select class="border-dark custom-select form-control select-${attr.id}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
             <option value="${attr.resetUrl}">
                 ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
             </option>
