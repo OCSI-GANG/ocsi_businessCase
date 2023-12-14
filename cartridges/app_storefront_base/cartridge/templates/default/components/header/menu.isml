@@ -17,17 +17,17 @@
         <ul class="nav navbar-nav" role="menu">
             <isif condition="${pdict.categories}">
                 <isloop items="${pdict.categories}" var="category">
-                    <iscomment> <isif condition="${category.subCategories}">
+                    <isif condition="${category.subCategories}">
                         <li class="nav-item dropdown" role="presentation">
                             <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" tabindex="0">${category.name}</a>
                             <isset name="menuItem" value="${category}" scope="page" />
                             <isinclude template="components/header/menuItem" />
                         </li>
                     <iselse/>
-                    </isif> </iscomment>
                         <li class="nav-item" role="presentation">
                             <a href="<isprint value="${category.url}" encoding="htmldoublequote"/>" id="${category.id}" class="nav-link" role="link" tabindex="0">${category.name}</a>
                         </li>
+                    </isif>
                 </isloop>
             </isif>
             <isinclude url="${URLUtils.url('Account-Header', 'mobile', true)}" />

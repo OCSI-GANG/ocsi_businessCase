@@ -64,7 +64,7 @@ $menu-item-margin: 0.625em;
 
 .brand {
     position: absolute;
-    left: 5%;
+    left: 50%;
     display: block;
     text-align: center;
 
@@ -79,7 +79,6 @@ $menu-item-margin: 0.625em;
     }
 
     @include media-breakpoint-down(md) {
-        left: 50%;
         width: 4em; /* 64/16 */
         margin-left: -2em;
         padding-top: 0.8em;
@@ -126,7 +125,7 @@ $menu-item-margin: 0.625em;
     vertical-align: top;
 
     .minicart-icon {
-        font-size: 0.5em;
+        font-size: 1.5em;
     }
 
     a.minicart-link {
@@ -195,12 +194,4 @@ a.normal {
         margin-bottom: 0.2em;
         padding-right: 2em;
     }
-}
-
-.container {
-    min-width: 85%;
-}
-
-.user-message {
-    font-weight:600;
 }
