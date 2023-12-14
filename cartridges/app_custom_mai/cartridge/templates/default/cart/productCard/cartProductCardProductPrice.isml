@@ -1,4 +1,4 @@
-<div class="col-lg-7 product-card-footer">
+<div class="offset-lg-3 col-lg-7 product-card-footer">
     <isif condition="${!lineItem.isBonusProductLineItem}" />
     <div class="row">
         <!---item price--->
