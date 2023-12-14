@@ -118,6 +118,9 @@ $menu-item-margin: 0.625em;
         margin-right: 1.5em;
         padding-top: $banner-padding;
         padding-bottom: $banner-padding;
+        @include media-breakpoint-down(sm) {
+            margin-right: 0;
+        }
     }
 }
 
@@ -145,7 +148,7 @@ $menu-item-margin: 0.625em;
         text-align: center;
         font-size: 0.8125em; /* 13/16 */
         position: relative;
-        top: -0.9375em; /* 15/16 */
+        top: 0.0625em; /* 15/16 */
         left: -0.9375em; /* 15/16 */
         color: $white;
     }
@@ -204,4 +207,23 @@ a.normal {
 .user-message {
     font-weight:600;
 }
-// commentaire
+.mai-custom-header-icon-position{
+    position: relative;
+    bottom: 2px;
+    left: 5px;
+}
+
+.mai-custom-header-width{
+    width: 75%;
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+    }
+}
+.mai-custom-header-inner-content-width{
+    width: fit-content;
+    justify-content: flex-end ;
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        margin: auto;
+    }
+}
