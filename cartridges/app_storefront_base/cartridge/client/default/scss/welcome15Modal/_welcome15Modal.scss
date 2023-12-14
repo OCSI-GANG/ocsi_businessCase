@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+.text-blue {
+    color:#3067c5;
+}
+
+.bg-blue {
+    background-color:#3067c5;
+    color: white;
+}
+
+#myModal{
+    border-radius: 0;
+    box-shadow: 3px 5px 5px black;
+
+    .modal-backdrop.show {
+        opacity: 0.1;
+    }
+
+    .modalContent,
+    .modalContent .modal-header{
+        border-radius: 0;
+    }
+
+    .modal-header {
+        position: relative;
+        padding: 1rem 1rem 0rem;
+
+        button{
+            position: absolute;
+            top:5px;
+            right: 15px;
+            font-weight: 200;
+            color:white;
+        }
+        p {
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+            line-height: 30px;
+        }
+
+        .hero-message{
+            font-size: 65px;
+            font-family: 'Kaushan Script', cursive;;
+            letter-spacing: 2px;
+            transform: rotate(-10deg);
+        }
+        .hero-message-2{
+            background-color: white;
+            padding: 5px 10px;
+            font-weight: bolder;
+            margin-top: 5px;
+        }
+    }
+    
+    .modalContent{
+        width: 80%;
+        padding: 15px;
+        position: relative;
+    }
+    .modal-body{
+        font-size: 20px;
+        letter-spacing: 1px;
+
+        p:first-child{
+            font-size: 24px;
+        }
+
+        p:nth-child(2){
+            font-weight: 600;
+        }
+    }
+
+    .modal-footer{
+        border-top: none;
+
+        button{
+            width: 33%;
+            border-radius: 10px;
+        }
+    }
+
+    .britbrit-the-queen{
+        display: none;
+        transition: ease-in-out;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+
+    &:hover .britbrit-the-queen{
+        display: block;
+        animation: britAnimation 2s ease-in-out 0s 1 alternate forwards;
+    }
+}
+
+@keyframes britAnimation {
+	0% {
+		opacity: 0;
+		transform: translateY(250px) rotate(200deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0) rotate(0deg);
+	}
+}
