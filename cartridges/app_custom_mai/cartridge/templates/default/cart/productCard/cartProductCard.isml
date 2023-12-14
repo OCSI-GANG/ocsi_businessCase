@@ -3,7 +3,6 @@
 <isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page" />
 
 <div class="card product-info ${bonusproductlineitem} uuid-${lineItem.UUID}">
-    <!--- name and remove buttons --->
 
     <div class="row ${bonuslineitemrow}">
         <div class="col-lg-11">
