@@ -337,3 +337,71 @@ span.ship-to-city-st-zip {
 .multi-ship-address-actions .btn-save-multi-ship {
     margin-left: 10px;
 }
+
+// CSS MAI CUSTOM FOR SHIPPMENT PAGE
+
+.card.mai-custom-shipping-section{
+    background-color: transparent;
+    background-clip: border-box;
+    border: none;
+    border-radius: 0;
+
+    // .card-header{
+    //     h2 {
+    //         font-weight: bold;
+    //     }
+    // }
+    .card{
+        background-color: #fff;
+        background-clip: border-box;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 0.1875rem;
+
+        .mai-custom-shipping-method{
+            .leading-lines{                
+                .start-lines{
+                    margin: 4px 0;
+                    padding: 5px 0 5px 30px;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+
+                    &:nth-last-child(2){
+                        border-bottom: 1px solid transparent;
+                    }
+                    .shipping-method-option{
+                        display: flex;
+                        flex-direction: column;
+                        .display-name {
+                            font-weight: bold;
+                        }
+                    }
+                }
+                
+                
+                .shipping-method-pricing{
+                    display: flex;
+                    justify-content: end;
+                    align-items: center;
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+                    margin: 4px 0;
+                    padding: 5px 30px 5px 0px;
+                    
+                    &:last-child{
+                        border-bottom: 1px solid transparent;
+                    } 
+                }  
+                   
+            }
+                  
+        }
+    }
+}
+
+#checkout-main {
+    .card{
+        .card-header{
+            h2 {
+                font-weight: bold;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+<div class="card ghost shipping">
+    <div class="card-header">
+        <h2 class="card-header-custom">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+    </div>
+</div>
+
+<div class="card shipping-section mai-custom-shipping-section">
+    <div class="single-shipping">
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="shipmentLoopState" value="${null}" scope="page" />
+        <isset name="lineItem" value="${null}" scope="page" />
+        <div data-shipment-uuid="${shippingModel.UUID}">
+            <form class="shipping-form" autocomplete="on" novalidate
+            action="${shipmentLoopState
+            ? URLUtils.url('CheckoutAddressServices-AddNewAddress')
+            : URLUtils.url('CheckoutShippingServices-SubmitShipping')}"
+            data-address-mode="${shippingModel.matchingAddressId ? 'edit' : 'new'}"
+            <isprint value=${pdict.forms.shippingForm.attributes} encoding="off"/>
+            >
+                <iscomment> CARD ADRESS SECTION </iscomment>
+                <div class="card mai-custom-adress-section">
+                   <div class="card-header">
+                        <h2 class="card-header-custom">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+                    </div> 
+                    <isinclude template="checkout/shipping/multiShipCheckbox" />
+
+                    <isinclude template="checkout/shipping/shipmentCard" />
+                </div>
+
+                <iscomment> CARD ADRESS SECTION </iscomment>
+                <div class="card mai-custom-adress-section">
+                    <iscomment> Customisation du block shipping method </iscomment>
+                    <div class="card-header">
+                        <h2 class="card-header-custom">${Resource.msg('heading.checkout.shipping.method', 'checkout', null)}</h2>
+                    </div> 
+                    <div class="mai-custom-shipping-method">
+                        <fieldset class="shipping-method-block">
+                            <isinclude template="checkout/shipping/shippingMethod" />
+                        </fieldset>
+                    </div>
+                </div>
+            </form>
+            <div class="shipping-error"></div>          
+        </div>
+    </div>
+
+    <div class="multi-shipping">
+        <isloop items="${pdict.order.shipping}" var="shippingModel" status="shipmentLoopState">
+            <isloop items="${shippingModel.productLineItems.items}" var="lineItem">
+                <div class="card" data-shipment-uuid="${shippingModel.UUID}">
+                    <div class="card-header">
+                        <isinclude template="checkout/productCard/productShippingCard" />
+                    </div>
+
+                    <isinclude template="checkout/shipping/shipmentCard" />
+                </div>
+            </isloop>
+        </isloop>
+    </div>
+</div>
