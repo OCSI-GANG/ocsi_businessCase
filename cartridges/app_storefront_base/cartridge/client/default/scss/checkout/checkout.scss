@@ -396,6 +396,11 @@ span.ship-to-city-st-zip {
     }
 }
 
+.mai-custom-payment-stage-display{
+    display: flex;
+    flex-direction: column-reverse;
+    
+}
 #checkout-main {
     .card{
         .card-header{
