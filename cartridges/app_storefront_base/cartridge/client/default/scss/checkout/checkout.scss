@@ -390,23 +390,30 @@ span.ship-to-city-st-zip {
                     } 
                 }  
                    
-            }
-                  
-        }
+            }        
+        }   
     }
 }
 
-.mai-custom-payment-stage-display{
-    display: flex;
-    flex-direction: column-reverse;
-    
+#checkout-main[data-checkout-stage="payment"],
+#checkout-main[data-checkout-stage="placeOrder"]{
+    .mai-custom-payment-stage-display{
+        display: flex;
+        flex-direction: column-reverse; 
+    }
 }
+
 #checkout-main {
     .card{
         .card-header{
             h2 {
                 font-weight: bold;
             }
+        }
+    }
+    .mai-custom-collapse{
+        .bi-chevron-down{
+            color: var(--color-grey4);
         }
     }
 }
