@@ -207,18 +207,61 @@ a.normal {
 .user-message {
     font-weight:600;
 }
+
+// CUSTOMISATION HEADER
+
+#mai-custom-header{
+    .container {
+        min-width: 100%;
+
+        .mai-custom-header-search-icons{
+            .col-8{
+                display: flex;
+                justify-content: center;
+            }
+            .mai-custom-header-inner-content-width {
+                a{
+                    @include media-breakpoint-down(md) {
+                        font-size: 15px;
+                    }  
+                }
+            }
+        }
+    }
+    .brand{
+        left:10%;
+        @include media-breakpoint-down(sm) {
+            left: 14%;
+        }
+    }
+
+    .site-search{
+        margin-left: 0;
+        margin-left: 38%;
+        @include media-breakpoint-down(md) {
+            margin-left: 33%;
+        }
+        @include media-breakpoint-down(sm) {
+            margin-left: 33%;
+        }
+        @include media-breakpoint-down(xs) {
+            margin-left: 33%;
+        }
+        .form{
+            input{
+                @include media-breakpoint-down(sm) {
+                    width: 24rem;
+                }
+            }
+        }
+    }
+}
 .mai-custom-header-icon-position{
     position: relative;
     bottom: 2px;
     left: 5px;
 }
 
-.mai-custom-header-width{
-    width: 75%;
-    @include media-breakpoint-down(sm) {
-        width: 100%;
-    }
-}
 .mai-custom-header-inner-content-width{
     width: fit-content;
     justify-content: flex-end ;
