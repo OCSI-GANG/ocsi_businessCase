@@ -215,9 +215,12 @@ a.normal {
         min-width: 100%;
 
         .mai-custom-header-search-icons{
-            .col-8{
+            .mai-custom-header-search-content{
                 display: flex;
                 justify-content: center;
+                @include media-breakpoint-down(md) {
+                    position: absolute;
+                }
             }
             .mai-custom-header-inner-content-width {
                 a{
@@ -225,32 +228,70 @@ a.normal {
                         font-size: 15px;
                     }  
                 }
+                .mai-custom-header-inner-content-menu{
+                    @include media-breakpoint-down(sm) {
+                        justify-content: start;
+                    }
+                }
+                .mai-custom-header-inner-content-icons{
+                    @include media-breakpoint-down(md) {
+                        justify-content: flex-end;
+                    }
+                    .user-message{
+                        @include media-breakpoint-down(lg) {
+                            font-size: 15px;
+                            line-height: normal;
+                            width: 5rem;                
+                        }
+                    }
+                }
             }
         }
-    }
-    .brand{
-        left:10%;
-        @include media-breakpoint-down(sm) {
-            left: 14%;
+        .brand{
+            left:14%;
+            @include media-breakpoint-down(lg) {
+                left: 14%;
+            }
+            @include media-breakpoint-down(md) {
+                left: 18%;
+            }
+            @include media-breakpoint-down(sm) {
+                left: 21%;
+            }
+            @include media-breakpoint-down(xs) {
+                left: 48%;
+            }        
         }
     }
 
     .site-search{
-        margin-left: 0;
-        margin-left: 38%;
-        @include media-breakpoint-down(md) {
-            margin-left: 33%;
+        margin-left: 68%;
+        // @include media-breakpoint-down(xl) {
+        //     margin-left: 47%;
+        // }
+        @include media-breakpoint-down(lg) {
+            margin-left: 38%;
         }
         @include media-breakpoint-down(sm) {
             margin-left: 33%;
         }
         @include media-breakpoint-down(xs) {
-            margin-left: 33%;
+            margin-left: 0%;
         }
-        .form{
-            input{
+
+        form{
+            
+            .fa-search{
+                position:relative;
+                top:-2rem;
+                right: -150%;
                 @include media-breakpoint-down(sm) {
-                    width: 24rem;
+                    position:relative;
+                    top:-2rem;
+                    right: -90%;
+                }
+                @include media-breakpoint-down(sm) {
+                    right: -85%;
                 }
             }
         }
@@ -268,5 +309,7 @@ a.normal {
     @include media-breakpoint-down(sm) {
         width: 100%;
         margin: auto;
+        display: flex;
+        justify-content: space-between;
     }
 }
