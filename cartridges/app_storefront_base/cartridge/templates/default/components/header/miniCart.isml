@@ -1,5 +1,5 @@
 <div class="minicart-total hide-link-med">
-    <a class="minicart-link d-flex flex-row mr-md-4" href="${URLUtils.https('Cart-Show')}" title="${Resource.msgf('minicart.count','common',null, pdict.quantityTotal)}" aria-label="${Resource.msgf('minicart.count','common',null, pdict.quantityTotal)}" aria-haspopup="true">
+    <a class="minicart-link d-flex flex-row" href="${URLUtils.https('Cart-Show')}" title="${Resource.msgf('minicart.count','common',null, pdict.quantityTotal)}" aria-label="${Resource.msgf('minicart.count','common',null, pdict.quantityTotal)}" aria-haspopup="true">
         <span class="user-message d-none d-md-flex">${Resource.msg('link.header.cart', 'account', null)}</span>
         <i class="minicart-icon mx-2 mai-custom-header-icon-position">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-handbag" viewBox="0 0 16 16">
