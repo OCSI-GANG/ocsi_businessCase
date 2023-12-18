@@ -313,3 +313,10 @@ a.normal {
         justify-content: space-between;
     }
 }
+
+.mai-sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
