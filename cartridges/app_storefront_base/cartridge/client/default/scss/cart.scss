@@ -266,7 +266,7 @@ $negative-spacer: -0.625rem;
     flex-direction: row;
     justify-content: space-between;
 }
-F
+
 .bundle-includes {
     font-size: 0.813em;
     margin-bottom: 0.625em;
@@ -320,4 +320,22 @@ select.mai-bg-color-f9{
 
 .bonus-product-button {
     margin-right: 1.5em;
+}
+
+//  OVERWRITE CART PRODUCT INFO
+
+#mai-custom-product-info{
+    .crossMobileView{
+        position: absolute;
+        top: -10px;
+        right: 5px;
+        height: 123%;
+        display: block;
+    }
+
+    .mai-custom-separator{
+        position: relative;
+        width: 100%;
+        padding: 0px;
+    }
 }

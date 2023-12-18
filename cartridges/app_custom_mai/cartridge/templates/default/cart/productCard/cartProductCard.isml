@@ -2,7 +2,7 @@
 <isset name="bonusproductlineitem" value="${hasEmbeddedBonusProducts ? 'bonus-product-line-item' : ''}" scope="page" />
 <isset name="bonuslineitemrow" value="${hasEmbeddedBonusProducts ? 'bonus-line-item-row' : ''}" scope="page" />
 
-<div class="card product-info ${bonusproductlineitem} uuid-${lineItem.UUID}">
+<div class="card product-info ${bonusproductlineitem} uuid-${lineItem.UUID}" id="mai-custom-product-info">
 
     <div class="row ${bonuslineitemrow}">
         <div class="col-lg-11">
@@ -40,27 +40,29 @@
                             </div>
                         </div>
                     </div>
-                    <isif condition="${!lineItem.isBonusProductLineItem}">
-                        <div class="remove-line-item d-lg-none">
-                            <isinclude template="components/deleteButton" />
-                        </div>
-                    </isif>
-                </div>
-                <div class="col-12 d-lg-none">
-                    <hr class="line-item-divider" />
-                </div>
-                <div class="col-12 d-lg-none">
-                    <isinclude template="cart/productCard/cartProductCardProductPrice" />
                 </div>
             </div>
+            <isif condition="${!lineItem.isBonusProductLineItem}">
+                <div class="remove-line-item d-lg-none crossMobileView">
+                    <isinclude template="components/deleteButton" />
+                </div>
+            </isif>
         </div>
 
 
         <isif condition="${!lineItem.isBonusProductLineItem}">
-            <div class="hidden-md-down">
+            <div class="hidden-md-down crossDesktopView">
                 <isinclude template="components/deleteButton" />
             </div>
         </isif>
+    </div>
+    <div class="col-12 d-lg-none mai-custom-separator">
+        <hr class="line-item-divider" />
+    </div>
+    <div class="row">
+        <div class="col-12 d-lg-none">
+            <isinclude template="cart/productCard/cartProductCardProductPrice" />
+        </div>
     </div>
 
     <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
