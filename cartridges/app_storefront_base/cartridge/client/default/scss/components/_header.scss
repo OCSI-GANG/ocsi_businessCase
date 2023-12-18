@@ -249,6 +249,7 @@ a.normal {
         }
         .brand{
             left:14%;
+            z-index: 105;
             @include media-breakpoint-down(lg) {
                 left: 14%;
             }
