@@ -158,3 +158,7 @@ a {
 header ~ #maincontent .container #mai-custom-link-blue a:not(.btn-primary, .btn-outline-primary) {
     color:var(--skin-primary-color-1);
 }
+header ~ #maincontent #mai-custom-cart-page #mai-continue-shopping-link ,
+header ~ #maincontent #mai-custom-cart-page #mai-help-phone-number {
+    color:var(--skin-link-color-2);
+}
