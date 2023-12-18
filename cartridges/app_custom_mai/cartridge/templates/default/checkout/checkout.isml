@@ -24,7 +24,7 @@
             <div class="col-12 col-sm-5 offset-sm-7 col-md-5 offset-md-7">
                 <div class="text-center">
                     <span >${Resource.msg('info.need.help','cart',null)}</span>
-                    <span><a href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span>
+                    <span id="mai-custom-link-blue"><a href="tel:${Resource.msg('info.phone.number','common',null)}">${Resource.msg('info.phone.number','common',null)}</a></span>
                 </div>
             </div>
         </div>
@@ -64,6 +64,7 @@
                 </div>
 
                 <!-- Step 2: Shipping -->
+                <iscomment>
                 <isinclude template="checkout/shipping/shipping" />
                 <div class="card shipping-summary">
                     <div class="card-header clearfix">
@@ -73,21 +74,55 @@
                     <div class="card-body">
                         <isinclude template="checkout/shipping/shippingSummary" />
                     </div>
-                </div>
-
-                <!-- Step 3: Payment and Billing-->
-                <isinclude template="checkout/billing/billing" />
-                <div class="card payment-summary">
-                    <div class="card-header clearfix">
-                        <h2 class="pull-left card-header-custom">${Resource.msg('heading.payment', 'checkout', null)}</h2>
-                        <button class="edit-button pull-right" aria-label="${Resource.msg('action.edit.step.msg.payment', 'checkout', null)}">${Resource.msg('action.edit.step', 'checkout', null)}</button>
+                </div> 
+                </iscomment>
+                <iscomment> <div class="<isif condition="${pdict.currentStage === 'payment' || pdict.currentStage === 'placeOrder' }">mai-custom-payment-stage-display</isif>"> </iscomment>
+                <div class="mai-custom-payment-stage-display">
+                    <div class="">
+                        <!-- Step 2: Shipping -->
+                        <isinclude template="checkout/shipping/shipping" />
+                        <iscomment> TEST ADD DROP DOWN FOR SHIPPING INFO </iscomment>
+                        <div class="card shipping-summary">
+                            <div class="mai-custom-collapse">
+                                <iscomment> TRIGGER DROPDOWN </iscomment>
+                                <div class="card-header" type="button" data-toggle="collapse" href="#collapsShippingInfos" role="button" aria-expanded="false" aria-controls="collapsShippingInfos">
+                                    <div class="row">
+                                        <div class="col-2 d-flex justify-content-between">
+                                            <h2 class="pull-left card-header-custom">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+                                            <button class="edit-button pull-right" aria-label="${Resource.msg('action.edit.step.msg.shipping', 'checkout', null)}">${Resource.msg('action.edit.step', 'checkout', null)}</button>
+                                        </div>
+                                        <div class="col-10 d-flex justify-content-end align-items-center mai-custom-collapse-shipping-infos-header-button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-chevron-down" viewBox="0 0 16 16" fill="currentColor" >
+                                                <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                            </svg>
+                                        </div>
+                                    </div> 
+                                </div>
+                                <iscomment> END TRIGGER DROPDOWN </iscomment>
+                                <div class="mai-custom-collapse-infos collapse" id="collapsShippingInfos">
+                                    <div class="card-body">
+                                        <isinclude template="checkout/shipping/shippingSummary" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <iscomment> END TEST ADD DROP DOWN FOR SHIPPING INFO </iscomment>
                     </div>
+                    <div class="">
+                        <!-- Step 3: Payment and Billing-->
+                        <isinclude template="checkout/billing/billing" />
+                        <div class="card payment-summary">
+                            <div class="card-header clearfix">
+                                <h2 class="pull-left card-header-custom">${Resource.msg('heading.payment', 'checkout', null)}</h2>
+                                <button class="edit-button pull-right" aria-label="${Resource.msg('action.edit.step.msg.payment', 'checkout', null)}">${Resource.msg('action.edit.step', 'checkout', null)}</button>
+                            </div>
 
-                    <div class="card-body">
-                        <isinclude template="checkout/billing/billingSummary" />
+                            <div class="card-body">
+                                <isinclude template="checkout/billing/billingSummary" />
+                            </div>
+                        </div>
                     </div>
                 </div>
-
             
                 <!----------------------------------------------------------------------------------->
                 <!-- Checkout Workflow Buttons -->
