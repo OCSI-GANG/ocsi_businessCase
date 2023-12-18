@@ -1,20 +1,29 @@
-<header id="mai-custom-header">
+<isscript>
+    var sitePrefs : SitePreferences = dw.system.Site.getCurrent().getPreferences();
+    var maiStickyHeader = sitePrefs.getCustom()["maiStickyHeader"];
+</isscript>
+
+<header id="mai-custom-header" class="${maiStickyHeader ? 'mai-sticky-header' : 'nullos'}">
     <isinclude template="/components/header/skipNav" />
     <div class="d-flex flex-column-reverse flex-md-column">
-         <nav role="navigation">
+        <nav role="navigation">
             <div class="header container">
                 <div class="row">
                     <div class="col-12">
                         <div class="navbar-header brand">
-                            <a class="logo-home" href="${URLUtils.url('Home-Show')}" title="${ Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg('global.home', 'common', null)) }">
-                                <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
-                                <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}" alt="${Resource.msg('global.storename', 'common', null)}" />
+                            <a class="logo-home" href="${URLUtils.url('Home-Show')}"
+                                title="${Resource.msgf('global.homepage.tooltip', 'common', null, Resource.msg('global.storename', 'common', null), Resource.msg(
+                                       'global.home', 'common', null))}">
+                                <img class="hidden-md-down" src="${URLUtils.staticURL('/images/logo.svg')}"
+                                    alt="${Resource.msg('global.storename', 'common', null)}" />
+                                <img class="d-lg-none" src="${URLUtils.staticURL('/images/logo-small.svg')}"
+                                    alt="${Resource.msg('global.storename', 'common', null)}" />
                             </a>
                         </div>
                         <div class="navbar-header">
-                            <iscomment> 
+                            <iscomment>
                                 <div class="pull-left">
-                                </div> 
+                                </div>
                             </iscomment>
                             <div class="mai-custom-header-search-icons d-flex justify-content-between row row-cols-2">
                                 <div class="col-8 mai-custom-header-search-content">
@@ -25,35 +34,42 @@
 
                                 <div class="d-flex justify-content-end col-md-4 col-12">
                                     <div class="row mai-custom-header-inner-content-width">
-                                    <iscomment> menu </iscomment>
+                                        <iscomment> menu </iscomment>
                                         <div class="col-8 col-md-0 mai-custom-header-inner-content-menu ml-0 pl-0">
-                                            <button class="navbar-toggler d-md-none" type="button" aria-controls="sg-navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                                            <button class="navbar-toggler d-md-none" type="button"
+                                                aria-controls="sg-navbar-collapse" aria-expanded="false"
+                                                aria-label="Toggle navigation">
                                                 &#9776; <span class="hidden-xs-down">Menu</span>
                                             </button>
                                         </div>
                                         <iscomment> users icon and cart icon </iscomment>
-                                        <div class="col-4 col-md-12 d-flex flex-row justify-content-md-around mai-custom-header-inner-content-icons">
+                                        <div
+                                            class="col-4 col-md-12 d-flex flex-row justify-content-md-around mai-custom-header-inner-content-icons">
                                             <div class="hidden-md-up">
                                                 <isinclude url="${URLUtils.url('Account-Header')}" />
                                                 <iscomment>Langue put in comment </iscomment>
-                                                <iscomment> <isinclude url="${URLUtils.url('Page-Locale')}" /> </iscomment>
+                                                <iscomment>
+                                                    <isinclude url="${URLUtils.url('Page-Locale')}" />
+                                                </iscomment>
                                             </div>
-                                            
-                                            <div class="minicart" data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
+
+                                            <div class="minicart"
+                                                data-action-url="${URLUtils.url('Cart-MiniCartShow')}">
                                                 <isinclude url="${URLUtils.url('Cart-MiniCart')}" />
                                             </div>
                                         </div>
-                                    </div>                                    
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block" id="sg-navbar-collapse">
+            <div class="main-menu navbar-toggleable-sm menu-toggleable-left multilevel-dropdown d-none d-md-block"
+                id="sg-navbar-collapse">
                 <div class="container">
                     <div class="row">
-                        <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}"/>
+                        <isinclude url="${URLUtils.url('Page-IncludeHeaderMenu')}" />
                     </div>
                 </div>
             </div>
@@ -70,7 +86,7 @@
                     </div>
                 </div>
             </div>
-        </div>   
+        </div>
     </div>
 
 </header>
