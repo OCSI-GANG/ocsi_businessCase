@@ -337,3 +337,25 @@ span.ship-to-city-st-zip {
 .multi-ship-address-actions .btn-save-multi-ship {
     margin-left: 10px;
 }
+
+
+.mai-custom-collapse-receipt-infos-header-button{
+    .bi-chevron-down{
+        color: var(--color-grey4);
+    }
+}
+.order-thank-you-email-msg{
+    font-size: 0.9rem;
+}
+
+@media (min-width: 992px) {
+    .order-thank-you-msg {
+      font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .order-thank-you-msg {
+      font-size: 2rem;
+    }
+  }

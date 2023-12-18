@@ -2,9 +2,9 @@
     <div class="card-header" type="button" data-toggle="collapse" href="#collapsReceiptInfos" role="button"
         aria-expanded="false" aria-controls="collapsReceiptInfos">
         <div class="row">
-            <h2 class="col-2 card-header-custom">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+            <h2 class="col-6 card-header-custom">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
             <div
-                class="col-10 d-flex justify-content-end align-items-center mai-custom-collapse-shipping-infos-header-button">
+                class="col-6 d-flex justify-content-end align-items-center mai-custom-collapse-receipt-infos-header-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-chevron-down"
                     viewBox="0 0 16 16" fill="currentColor">
                     <path fill-rule="evenodd"

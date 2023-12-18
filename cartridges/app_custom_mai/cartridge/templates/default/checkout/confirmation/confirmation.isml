@@ -16,7 +16,7 @@
         <div class="row">
             <div
                 class="${pdict.returningCustomer ? 'col-sm-6 offset-sm-3' : 'offset-lg-3 text-lg-center col-sm-6 offset-sm-3 offset-md-0'}">
-                <h2 class="order-thank-you-msg"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                <h2 class="order-thank-you-msg font-weight-bold"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="text-success d-none d-lg-inline bi bi-check-circle-fill"
                         viewBox="0 0 16 16">
                         <path
