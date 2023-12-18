@@ -46,12 +46,7 @@
                         </div>
                     </isif>
                 </div>
-                <div class="col-12 d-lg-none">
-                    <hr class="line-item-divider" />
-                </div>
-                <div class="col-12 d-lg-none">
-                    <isinclude template="cart/productCard/cartProductCardProductPrice" />
-                </div>
+
             </div>
         </div>
 
@@ -61,6 +56,14 @@
                 <isinclude template="components/deleteButton" />
             </div>
         </isif>
+    </div>
+    <div class="col-12 d-lg-none">
+        <hr class="line-item-divider" />
+    </div>
+    <div class="row">
+        <div class="col-12 d-lg-none">
+            <isinclude template="cart/productCard/cartProductCardProductPrice" />
+        </div>
     </div>
 
     <isif condition="${lineItem.bonusProductLineItemUUID === 'bonus'}">
