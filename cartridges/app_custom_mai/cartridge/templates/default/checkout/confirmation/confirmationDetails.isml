@@ -1,0 +1,40 @@
+<div class="card confirm-details">
+    <div class="card-header" type="button" data-toggle="collapse" href="#collapsReceiptInfos" role="button"
+        aria-expanded="false" aria-controls="collapsReceiptInfos">
+        <div class="row">
+            <h2 class="col-6 card-header-custom">${Resource.msg('title.receipt', 'confirmation', null)}</h2>
+            <div
+                class="col-6 d-flex justify-content-end align-items-center mai-custom-collapse-receipt-infos-header-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi bi-chevron-down"
+                    viewBox="0 0 16 16" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    <div class="mai-custom-collapse-infos collapse" id="collapsReceiptInfos">
+        <div class="card-body">
+            <p>
+                <span class="summary-section-label order-number-label">${Resource.msg('label.order.number', 'confirmation', null)}</span>
+                <span class="summary-details order-number">${pdict.order.orderNumber}</span>
+                <br />
+                <span class="summary-section-label order-date-label">${Resource.msg('label.order.date', 'confirmation', null)}</span>
+                <span class="summary-details order-date">
+                    <isprint value="${pdict.order.creationDate}" style="DATE_SHORT" /></span>
+            </p>
+
+            <isinclude template="checkout/shipping/shippingSummary" />
+            <isinclude template="checkout/billing/billingSummary" />
+
+        </div>
+    </div>
+</div>
+
+<isinclude template="checkout/orderProductSummary" />
+
+<div class="card checkout-order-total-summary">
+    <div class="card-body order-total-summary">
+        <isinclude template="checkout/orderTotalSummary" />
+    </div>
+</div>
