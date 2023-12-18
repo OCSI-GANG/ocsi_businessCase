@@ -405,6 +405,7 @@ span.ship-to-city-st-zip {
 
 #checkout-main {
     .card{
+        background-color: var(--color-white);
         .card-header{
             h2 {
                 font-weight: bold;
@@ -414,6 +415,14 @@ span.ship-to-city-st-zip {
     .mai-custom-collapse{
         .bi-chevron-down{
             color: var(--color-grey4);
+        }
+    }
+    .mai-custom-adress-section{
+        .gift-message-block{
+            display: none;
+            @include media-breakpoint-down(sm) {
+                display: block;
+            }
         }
     }
 }

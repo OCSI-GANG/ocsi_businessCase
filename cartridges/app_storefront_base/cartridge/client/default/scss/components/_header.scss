@@ -104,7 +104,9 @@ $menu-item-margin: 0.625em;
 
     .close-button {
         width: 1.5em + $banner-padding * 2;
-
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
         .close {
             opacity: 1;
             color: $white;
@@ -120,6 +122,23 @@ $menu-item-margin: 0.625em;
         padding-bottom: $banner-padding;
         @include media-breakpoint-down(sm) {
             margin-right: 0;
+        }
+    }
+
+    .container {
+        @include media-breakpoint-down(sm) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        div:nth-child(1){
+            @include media-breakpoint-down(sm) {
+                justify-content: center!important;
+            }
+        }
+        .header-promotion{
+            @include media-breakpoint-down(sm) {
+                font-size: 14px;
+            }
         }
     }
 }
@@ -267,9 +286,12 @@ a.normal {
 
     .site-search{
         margin-left: 68%;
-        // @include media-breakpoint-down(xl) {
-        //     margin-left: 47%;
-        // }
+        @include media-breakpoint-down(xxl) {
+            margin-left: 68%;
+        }
+        @include media-breakpoint-down(xl) {
+            margin-left: 47%;
+        }
         @include media-breakpoint-down(lg) {
             margin-left: 38%;
         }
