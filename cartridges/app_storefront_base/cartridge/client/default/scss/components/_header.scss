@@ -338,8 +338,22 @@ a.normal {
 }
 
 .mai-sticky-header {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 10;
     background-color: white;
+    width:100%;
+}
+
+.modal-backdrop{
+    z-index: 105;
+    position: sticky;
+}
+
+#removeProductModal{
+    background-color: #0e0e0ea8;
+    opacity: 1;
+    .modal-content{
+        z-index: 10000;
+    }
 }

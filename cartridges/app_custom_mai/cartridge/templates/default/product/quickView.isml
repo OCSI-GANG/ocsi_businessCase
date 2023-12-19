@@ -66,6 +66,28 @@
                         </div>
                     </div>
 
+                    <iscomment> inclusion du message 
+                        this current is currently not available
+                    </iscomment>
+                    <div class="row mb-2">
+                        <div class="col-12">
+
+                            <div class="col-11 mx-auto availability">
+                               <isif condition="${!product.available}">
+                                    <div class="d-flex text-danger">
+                                        <div class="ml-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+                                                <circle cx="8" cy="8" r="8"/>
+                                            </svg>
+                                        </div>  
+                                        <p class="text-danger">This item is currently not available !</p> 
+                                    </div>
+                               </isif>
+                            </div>
+                        </div>
+                    </div>
+                    <iscomment> end inclusion du message </iscomment>
+
                     <!-- Applicable Promotions -->
                     <div class="row">
                         <div class="col-12 promotions my-2">
