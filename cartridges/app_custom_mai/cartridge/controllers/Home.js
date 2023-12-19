@@ -40,12 +40,12 @@ server.append("Show", function (req, res, next) {
     }
     if (customer) {
         if (!customer.activeData.custom.isWelcomeCodePromoApplied) {
-            res.setViewData({ welcome15: false });
+            res.setViewData({ welcome15: true });
         } else {
-        res.setViewData({ welcome15: true });
+        res.setViewData({ welcome15: false });
         }
     } else {
-        res.setViewData({ welcome15: true });
+        res.setViewData({ welcome15: false });
     }
 
     next();
