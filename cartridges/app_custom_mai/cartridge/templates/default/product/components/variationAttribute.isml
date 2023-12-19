@@ -46,24 +46,30 @@ Template Notes:
     <iselse>
         <!-- Select <Attribute> Label -->
         <iscomment> ajouter condition si le produit est en rupture de stock </iscomment>
-        <label class="${attr.id} ${loopState && loopState.count ? 'text-secondary' : '' } " for="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }">
+        <label class=" font-weight-bold ${attr.id} ${loopState && loopState.count ? 'text-secondary' : '' } " for="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }">
             ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
         </label>
 
         <!-- Attribute Values Drop Down Menu -->
-        <select class="custom-select form-control select-${attr.id}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
-            <option value="${attr.resetUrl}">
-                ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
-            </option>
-            <isloop items="${attr.values}" var="attrValue">
-                <option value="${attrValue.url}" data-attr-value="${attrValue.value}"
-                    ${!attrValue.selectable ? 'disabled' : ''}
-                    ${attrValue.selected ? 'selected' : ''}
-                >
-                    ${attrValue.displayValue}
+        <div class="mai-custom-select-container">
+            <div class="${!product.available ? 'text-muted': 'text-dark'}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-chevron-down mai-custom-chevron-down" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                </svg>
+            </div>
+            <select ${!product.available ? 'disabled': ''} class="test custom-select form-control select-${attr.id} ${!product.available ? '': 'border-dark'}" id="${attr.id}-${loopState && loopState.count ? loopState.count : '1' }" ${ product.productType === "variant" && isBundle ? "disabled" : "" }>
+                <option value="${attr.resetUrl}">
+                    ${Resource.msg('label.select', 'common', null)} ${attr.displayName}
                 </option>
-            </isloop>
-        </select>
-
+                <isloop items="${attr.values}" var="attrValue">
+                    <option value="${attrValue.url}" data-attr-value="${attrValue.value}"
+                        ${!attrValue.selectable ? 'disabled' : ''}
+                        ${attrValue.selected ? 'selected' : ''}
+                    >
+                        ${attrValue.displayValue}
+                    </option>
+                </isloop>
+            </select>
+        </div>
     </isif>
 </div>

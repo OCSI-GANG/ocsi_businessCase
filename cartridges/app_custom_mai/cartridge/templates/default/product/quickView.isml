@@ -19,7 +19,7 @@
                 </div>
             </div>
 
-            <div class="detail-panel">
+            <div class="detail-panel" id="mai-custom-quick-view">
                 <!-- Attributes -->
                 <section class="attributes">
 
@@ -46,7 +46,6 @@
                                 </isif>
                             </div>
                         </isloop>
-
                     <div class="row mb-2">
                         <div class="col-12">
                             <!-- Prices -->
@@ -55,27 +54,14 @@
                                 <isinclude template="product/components/pricing/main" />
                             </div>
                         </div>
-                        
-                        <div class="col-12">
-                            <!-- Cart and [Optionally] Apple Pay -->
-                            <isif condition="${pdict.addToCartUrl}">
-                                <isinclude template="product/components/addToCartGlobal" />
-                            <iselse>
-                                <isinclude template="product/components/updateProduct" />
-                            </isif>
-                        </div>
                     </div>
-
-                    <iscomment> inclusion du message 
-                        this current is currently not available
-                    </iscomment>
-                    <div class="row mb-2">
+                    <iscomment> Avaibility product</iscomment>
+                    <div class="row">
                         <div class="col-12">
-
-                            <div class="col-11 mx-auto availability">
+                            <div class="mx-1">
                                <isif condition="${!product.available}">
                                     <div class="d-flex text-danger">
-                                        <div class="ml-2">
+                                        <div class="mr-2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
                                                 <circle cx="8" cy="8" r="8"/>
                                             </svg>
@@ -86,12 +72,22 @@
                             </div>
                         </div>
                     </div>
-                    <iscomment> end inclusion du message </iscomment>
+                    <iscomment> End Avaibility product </iscomment>
+                    <div class="row mb-2">  
+                        <div class="col-12">
+                            <!-- Cart and [Optionally] Apple Pay -->
+                            <isif condition="${pdict.addToCartUrl}">
+                                <isinclude template="product/components/addToCartGlobal" />
+                            <iselse>
+                                <isinclude template="product/components/updateProduct" />
+                            </isif>
+                        </div>
+                    </div>
 
                     <!-- Applicable Promotions -->
                     <div class="row">
                         <div class="col-12 promotions my-2">
-                            <div class="align-self-left mai-quick-view-bg-promotions">
+                            <div class="align-self-left">
                                 <isinclude template="product/components/promotions" />
                             </div>
                         </div>

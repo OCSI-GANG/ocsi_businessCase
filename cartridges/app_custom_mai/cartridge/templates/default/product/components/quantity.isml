@@ -1,0 +1,18 @@
+<label class="font-weight-bold" for="quantity-${loopState && loopState.count ? loopState.count : '1' }">${Resource.msg('label.quantity', 'common', null)}</label>
+<div class="mai-custom-select-container">
+    <div class="${!product.available ? 'text-muted': 'text-dark'}">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-chevron-down mai-custom-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg>
+    </div>
+    <select ${!product.available ? 'disabled': ''} class="${!product.available ? '': 'border-dark'} mai-select-arrow quantity-select custom-select form-control" id="quantity-${loopState && loopState.count ? loopState.count : '1' }">
+        <isloop items="${product.quantities}" var="quantity">
+            <option value="${quantity.value}"
+                    <isif condition="${product.productType !== 'bundle'}">data-url="${quantity.url}"</isif>
+                    ${quantity.selected ? 'selected' : ''}
+            >
+                ${quantity.value}
+            </option>
+        </isloop>
+    </select>
+</div>
