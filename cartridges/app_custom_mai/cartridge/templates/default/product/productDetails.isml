@@ -10,7 +10,7 @@
     <isset name="isQuickView" value="${false}" scope="page" />
     <isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
     <isobject object="${product.raw}" view="detail" />
-        <div class="container product-detail product-wrapper" data-pid="${product.id}">
+        <div class="container product-detail product-wrapper" data-pid="${product.id}" id="mai-custom-detail-product-page">
             <div class="row">
                 <div class="col-12">
                     <!--Breadcrumbs-->
@@ -115,14 +115,12 @@
 
 
                         <div class="prices-add-to-cart-actions">
-                            
-
                             <!-- Cart and [Optionally] Apple Pay -->
                             <isinclude template="product/components/addToCartProduct" />
                         </div>
                         <!-- Applicable Promotions -->
-                        <div class="row">
-                            <div class="col-12 promotions">
+                        <div class="my-3">
+                            <div class="col-12 promotions mai-custom-bandeau-promo">
                                 <isinclude template="product/components/promotions" />
                             </div>
                         </div>

@@ -155,10 +155,48 @@ a {
     padding-right: 2.5rem;
 }
 
-header ~ #maincontent .container #mai-custom-link-blue a:not(.btn-primary, .btn-outline-primary) {
+header ~ #maincontent .container #mai-custom-link-blue a:not(.btn-primary, .btn-outline-primary),
+header ~ #maincontent .container a#mai-edit-button:not(.btn-primary, .btn-outline-primary)
+{
     color:var(--skin-primary-color-1);
 }
 header ~ #maincontent #mai-custom-cart-page #mai-continue-shopping-link ,
-header ~ #maincontent #mai-custom-cart-page #mai-help-phone-number {
+header ~ #maincontent #mai-custom-cart-page #mai-help-phone-number
+{
     color:var(--skin-link-color-2);
+}
+
+#mai-custom-detail-product-page{
+    .mai-custom-select-container{
+        .custom-select{
+            appearance: none;
+            background: none;
+            background: #e9ecef;  
+        }
+    }
+
+    .carousel-inner{
+        background-color: var(--color-black);
+    }
+
+    .carousel-item{
+        img{
+            margin: auto;
+        }
+    }
+
+    .mai-custom-bandeau-promo{
+        background-color: #F1F3F5;
+        padding: 10px 10px 10px 15px;
+    }
+
+    .mai-quick-view-bg-promotions{
+        .bi-info-circle-fill {
+            color: #3067c5;
+        }
+
+        .promotions{
+            text-align: left;
+        }
+    }
 }

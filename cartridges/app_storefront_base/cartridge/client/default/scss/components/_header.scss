@@ -74,7 +74,7 @@ $menu-item-margin: 0.625em;
 
     @include media-breakpoint-up(lg) {
         width: 14.125em; /* 226/16 */
-        margin-left: -7.0625em; /* 113/16 */
+        // margin-left: -7.0625em; /* 113/16 */
         padding-top: 0.5em;
     }
 
@@ -104,6 +104,7 @@ $menu-item-margin: 0.625em;
 
     .close-button {
         width: 1.5em + $banner-padding * 2;
+        opacity: 0;
         @include media-breakpoint-down(sm) {
             display: none;
         }
@@ -270,7 +271,7 @@ a.normal {
             left:14%;
             z-index: 105;
             @include media-breakpoint-down(lg) {
-                left: 14%;
+                left: 4%;
             }
             @include media-breakpoint-down(md) {
                 left: 18%;
@@ -287,7 +288,7 @@ a.normal {
     .site-search{
         margin-left: 68%;
         @include media-breakpoint-down(xxl) {
-            margin-left: 68%;
+            margin-left: 47%;
         }
         @include media-breakpoint-down(xl) {
             margin-left: 47%;
@@ -319,6 +320,11 @@ a.normal {
             }
         }
     }
+}
+
+.brand{
+    left:50%;
+    z-index: 105;        
 }
 .mai-custom-header-icon-position{
     position: relative;
